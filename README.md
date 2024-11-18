@@ -20,7 +20,7 @@ This command initializes the data folder (`data`) using the genesis file (`ether
 To start your node, use the `geth` command with the `console` flag to enable interaction:
 
 ```bash
-./geth --datadir ./data --networkid 1504 --port 22202 --http --http.addr 0.0.0.0 --http.port 8545 --http.api personal,eth,net,web3,miner --http.corsdomain "*" --syncmode "full" console
+./geth --datadir ./data --networkid 1505 --port 22202 --http --http.addr 0.0.0.0 --http.port 8545 --http.api personal,eth,net,web3,miner --http.corsdomain "*" --syncmode "full" console
 ```
 
 This starts the node in full synchronization mode and provides access to an interactive console.
@@ -31,7 +31,11 @@ To begin syncing with the network, add peers using the `admin.addPeer` command:
 
 ```javascript
 admin.addPeer(
-	"enode://b631e4f9cde9f482bfeb3c93728c68091cd85964326e6f049dc133648d0abc09e63e59abe874cdf42a17dc598d7feed74f029f3ff51d94179dd07853fa361a8e@139.180.145.179:22202"
+	"enode://f63dda6960c7fe758552fb9e25283445dd0f5726db56eab6a3dd9560230b357d50e33c449da632ce977b42f48b9159e09355e567862a266f5c2532148727cc52@139.180.145.179:22202"
+);
+
+admin.addPeer(
+	"enode://0cba91a27b0b4ec4ef77cfca9b5d6edd89d10f241b175be903ccbb0e70d4889e01579200583627408e6c05b19209fd71bfca36baddeb0d702750bb728b88fd7a@140.82.8.255:22202"
 );
 ```
 
@@ -44,7 +48,7 @@ After adding peers, you may keep the node running or restart it without the `con
 To enable mining, use the `--mine` flag with additional mining parameters:
 
 ```bash
-./geth --datadir ./data --networkid 1504 --port 22202 --http --http.addr 0.0.0.0 --http.port 8545 --http.api personal,eth,net,web3,miner --http.corsdomain "*" --syncmode "full" --mine --miner.threads=1 --miner.etherbase 0xYourEthereumAddress
+./geth --datadir ./data --networkid 1505 --port 22202 --http --http.addr 0.0.0.0 --http.port 8545 --http.api personal,eth,net,web3,miner --http.corsdomain "*" --syncmode "full" --mine --miner.threads=1 --miner.etherbase 0xYourEthereumAddress
 ```
 
 Replace `0xYourEthereumAddress` with your own Ethereum address to receive mining rewards.
